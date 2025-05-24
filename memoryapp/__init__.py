@@ -20,6 +20,8 @@ app.config['SQLALCHEMY_ECHO'] = True
 
 db.init_app(app)
 
+import memoryapp.routes
+
 
 @event.listens_for(Engine, 'connect')
 def set_sqlite_pragma(dbapi_connection, connection_record):
