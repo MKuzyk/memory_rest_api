@@ -13,3 +13,12 @@ def create_category(category_name: str) -> Category:
     db.session.commit()
 
     return category
+
+
+def delete_category(category_id: int):
+    category = Category.query.get(category_id)
+
+    if category:
+        db.session.delete(category)
+        db.session.commit()
+
