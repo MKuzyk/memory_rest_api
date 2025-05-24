@@ -1,15 +1,11 @@
 from flask import jsonify
 
 from memoryapp import app
-
-categories_list = [
-    {'category_id': 1, 'category_name': 'Sport'},
-    {'category_id': 2, 'category_name': 'Kuchnia'}
-]
+from memoryapp.repository import get_categories
 
 
 @app.route('/categories', methods=['GET'])
 def categories():
-    return jsonify(categories_list)
+    return jsonify(get_categories())
 
 
