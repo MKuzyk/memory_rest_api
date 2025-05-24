@@ -1,0 +1,18 @@
+meta {
+  name: Tworzenie fiszki
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:5000/categories/1000/cards
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "word": "Pen",
+    "definition": "Dlugopis"
+  }
+}
